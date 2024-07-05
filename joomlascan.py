@@ -6,6 +6,7 @@ import argparse
 from bs4 import BeautifulSoup
 import threading
 import time
+import os
 
 dbarray = []
 url = ""
@@ -26,7 +27,7 @@ def hello():
 
 
 def load_component():
-    with open("comptotestdb.txt", "r") as f:
+    with open(os.path.dirname(__file__) + '/' + "comptotestdb.txt", "r") as f:
         for line in f:
             dbarray.append(line[:-1]) if line[-1] == "\n" else dbarray.append(line)
 
